@@ -25,12 +25,14 @@ cd %currentdir%
 java -jar Spigot-1.14.3.jar
 if exist Spigot-1.14.3.jar (goto menu) else (wget https://cdn.getbukkit.org/spigot/spigot-1.14.3.jar)
 java -jar Spigot-1.14.3.jar
+del BuildTools.jar
 cls
 goto menu
 :SMCSN
 cls
 title Server console
 java -jar Spigot_1.14.3.jar
+cls
 java -jar Spigot-1.14.3.jar
 cls
 goto menu
@@ -44,7 +46,8 @@ echo Build 4.1: Fixed changelog
 echo Build 4.2: Removed Case-sensitivity
 echo Build 4.2.1: Minor Messy issue
 echo Build 5: Stupid mistakes removed
-echo Build 5.1 Removed unused code and 1st ver to hit GitHub
+echo Build 5.1: Removed unused code and 1st ver to hit GitHub
+echo Build 5.2: BuildTools now updates automatically, mistake of mine
 pause
 cls
 goto menu
