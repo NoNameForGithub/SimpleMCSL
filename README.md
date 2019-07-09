@@ -5,5 +5,9 @@ Base app has the wget standalone exe, Java and Git for Windows as requirements f
 
 Check the wiki to find versions that work on older systems like XP (requirement programs)
 ## Download [here!](https://github.com/NoNameForGithub/SimpleMCSL/releases/download/0.5.0.1/Release.cmd)
-
+### Compatible systems
+Windows 10
+Windows 8(.1)
+Windows 7
+[Windows XP and Server 2003 (plus all its subversions)](https://github.com/NoNameForGithub/SimpleMCSL/wiki/Older-system-compatibility)
 
