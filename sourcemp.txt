@@ -18,19 +18,19 @@ del BuildTools.jar
 echo eula=true > eula.txt
 set currentdir=.
 wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
-java -jar BuildTools.jar
-java -jar Spigot-1.14.3.jar
-if exist Spigot-1.14.3.jar (goto menu) else (wget https://cdn.getbukkit.org/spigot/spigot-1.14.3.jar)
-java -jar Spigot-1.14.3.jar
+java -jar BuildTools.jar --rev 1.14.4
+java -jar Spigot-1.14.4.jar
+if exist Spigot-1.14.4.jar (goto menu) else (wget https://cdn.getbukkit.org/spigot/spigot-1.14.3.jar)
+java -jar Spigot-1.14.4.jar
 del BuildTools.jar
 cls
 goto menu
 :SMCSN
 cls
 title Server console
-java -jar Spigot_1.14.3.jar
+java -jar Spigot_1.14.4.jar
 cls
-java -jar Spigot-1.14.3.jar
+java -jar Spigot-1.14.4.jar
 cls
 goto menu
 :changelog
