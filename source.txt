@@ -19,21 +19,21 @@ set currentdir=.
 wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
 set bashdir="C:\Program Files (x86)\Git\bin\bash.exe"
 set bashdir64="C:\Program Files\Git\bin\bash.exe"
-%bashdir% --login -i -c "java -jar ""%currentdir%\BuildTools.jar"" --rev 1.14.3
-%bashdir64% --login -i -c "java -jar ""%currentdir%\BuildTools.jar"" --rev 1.14.3
+%bashdir% --login -i -c "java -jar ""%currentdir%\BuildTools.jar"" --rev [mcverhere]
+%bashdir64% --login -i -c "java -jar ""%currentdir%\BuildTools.jar"" --rev [mcverhere]
 cd %currentdir%
-java -jar Spigot-1.14.3.jar
-if exist Spigot-1.14.3.jar (goto menu) else (wget https://cdn.getbukkit.org/spigot/spigot-1.14.3.jar)
-java -jar Spigot-1.14.3.jar
+java -jar Spigot-[mcverhere].jar
+if exist Spigot-[mcverhere].jar (goto menu) else (wget https://cdn.getbukkit.org/spigot/spigot-1.14.3.jar)
+java -jar Spigot-[mcverhere].jar
 del BuildTools.jar
 cls
 goto menu
 :SMCSN
 cls
 title Server console
-java -jar Spigot_1.14.3.jar
+java -jar Spigot_[mcverhere].jar
 cls
-java -jar Spigot-1.14.3.jar
+java -jar Spigot-[mcverhere].jar
 cls
 goto menu
 :changelog
