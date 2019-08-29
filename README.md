@@ -6,6 +6,7 @@ Git not needed for MP ver<br>
 
 Check the wiki to find versions that work on older systems like XP (requirement programs)
 ## Download [here](https://github.com/NoNameForGithub/SimpleMCSL/releases/)
+[changelog before github](https://github.com/NoNameForGithub/SimpleMCSL/blob/master/info/chnglog.txt)
 ### Compatible systems
 Windows 10<br>
 
