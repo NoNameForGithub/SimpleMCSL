@@ -1,0 +1,10 @@
+Build 1: 1st build, due to code oversights this version of the launcher doesn't work
+Build 2: Code cleaned and 1st working properly version [Only on 64bit]
+Build 3: Oversight on code that would make 32-bit systems fail in the installation process [aka fixed 32bit support]
+Build 4: Removed broken auto-checker code temporaily
+Build 4.1: Fixed changelog 
+Build 4.2: Removed Case-sensitivity
+Build 4.2.1: Code cleanup
+Build 5: Stupid mistakes removed
+Build 5.1: Removed unused code and 1st ver to hit GitHub
+Build 5.2: BuildTools now updates automatically, mistake of mine
