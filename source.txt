@@ -20,7 +20,7 @@ set bd64="C:\Program Files\Git\bin\bash.exe"
 %bd64% --login -i -c "java -jar ""%currentdir%\BuildTools.jar"" --rev [mcverhere]
 cd %cud%
 java -jar Spigot-[mcvh].jar
-if exist Spigot-[mcvh].jar (goto menu) else (wget https://cdn.getbukkit.org/spigot/spigot-1.14.3.jar)
+if exist Spigot-[mcvh].jar (goto menu) else (wget https://cdn.getbukkit.org/spigot/spigot-mcver.jar)
 java -jar Spigot-[mcvh].jar
 del BuildTools.jar
 cls
