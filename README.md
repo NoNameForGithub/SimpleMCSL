@@ -6,6 +6,8 @@ Git not needed for MP ver<br>
 
 Check the wiki to find versions that work on older systems like XP (requirement programs)
 ## Download [here](../../releases/)
+[Untested builds here](../../releases/tag/be)
+
 [changelog before github](./info/chnglog.txt)
 ### Compatible systems
 Windows 10<br>
