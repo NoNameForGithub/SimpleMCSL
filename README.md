@@ -1,4 +1,5 @@
 # SimpleMCSL
+## Rewrite coming soon ;)
 Shitty minecraft server launcher intended for my personal usage, so if you're looking for a lot, don't stay here<br>
 Req:<br>
 wget exe, Java and Git for Windows<br> 
