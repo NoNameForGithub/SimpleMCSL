@@ -1,5 +1,20 @@
 @echo off
-title LaunchSrv [OSS/DOFT]
+:: Minecraft Server Launcher - The Server Toolkit rewrite
+:: Author [nonameforgithub 2019]
+
+title MCSL v1.0-prealpha [rewrite]
+echo Starting up...
+:: Check for temporary files if they weren't deleted in the last session
+if exist temp.bat del /q temp.bat
+
+:: Variable setting time
+set version=1.0
+set dev=1
+
+:: Variable checking time
+if %dev%==1 title MCSL v1.0-dev [rewrite]
+if %dev%==0 title MCSL v1.0 [rewrite]
+
 goto menu
 :menu 
 echo [L]atest
