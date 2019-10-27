@@ -1,50 +1,113 @@
 @echo off
 :: Minecraft Server Launcher - The Server Toolkit rewrite
 :: Author [nonameforgithub 2019]
-
-title MCSL v1.0-prealpha [rewrite]
 echo Starting up...
+
 :: Check for temporary files if they weren't deleted in the last session
+echo Checking temp files...
 if exist temp.bat del /q temp.bat
 
 :: Variable setting time
-set version=1.0
+echo Setting/checking variables..
+set curl=https://github.com/KcrPL/KcrPL.github.io/raw/master/Patchers_Auto_Update/RiiConnect24Patcher_Beta/curl.exe
+set fileshat=http://intelcoreocta.7m.pl/php/mcslfiles.php?dir=%tempdironl1%
+set version=1.0.0
 set dev=1
+set stage=dev
+set datec=27/10/2019
+set at=
+set currentmcver=1.14.4
+set temp=%appdata%/.MinecraftServerLauncher
+set devmenu=0
 
 :: Variable checking time
-if %dev%==1 title MCSL v1.0-dev [rewrite]
-if %dev%==0 title MCSL v1.0 [rewrite]
+if %dev%==1 title MCSL-TST v%version%-%stage% [rewrite]
+if %dev%==0 title MCSL-TST v%version% [rewrite]
+if %devmenu%==0 goto menu
+if %devmenu%==1 goto devmenu
 
+:: Downloading requirements for some sections of the program
+echo Curl not detected, downloading...
+if not exist %temp%/curl.exe
+call powershell -command (new-object System.Net.WebClient).DownloadFile('"%curl%"', '"%temp%/curl.exe"')
+
+::Autoupdate code (on jah i'm not activating this until i finish it)
+:autoupdate
+echo Checking for updates...
+if exist "%Temp%\version.txt" del "%Temp%\version.txt" /q
+set tempdironl1=version-%stage%.txt
+call powershell -command (new-object System.Net.WebClient).DownloadFile('"%fileshat%"', '"%temp%/version.txt"')
+if exist "%Temp%\version.txt" set /p updateversion=<"%Temp%\version.txt"
+if %updateversion%==%version% goto utd
+set tempdironl1=../source.txt
+call powershell -command (new-object System.Net.WebClient).DownloadFile('"%fileshat%"', '"%temp%/update.bat"')
+if not exist %temp%/updst1.cmd goto stage2-creation
+if exist %temp%/updst1.cmd goto stage2ac
+
+cls
 goto menu
 :menu 
+echo The server toolkit (Compiled on %date% at %at%)
+echo According to the inside of the file, the current version of Minecraft is %currentmcver%, if that's not correct change it
 echo [L]atest
-echo [C]hangelog
+echo [S]elect Minecraft version
 echo [I]nstall or Update to the latest version
 SET /P s=Select-[
 IF %s%==L GOTO SMCSN
 IF %s%==I GOTO inst
 IF %s%==l GOTO SMCSN
 IF %s%==i GOTO inst
+if %s%==S goto msgn1
+if %s%==s goto msgn1
 :inst
 cls
 set cud=.
 wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
 set bd="C:\Program Files (x86)\Git\bin\bash.exe"
 set bd64="C:\Program Files\Git\bin\bash.exe"
-%bd% --login -i -c "java -jar ""%currentdir%\BuildTools.jar"" --rev [mcverhere]
-%bd64% --login -i -c "java -jar ""%currentdir%\BuildTools.jar"" --rev [mcverhere]
+%bd% --login -i -c "java -jar ""%currentdir%\BuildTools.jar"" --rev %currentmcver%
+%bd64% --login -i -c "java -jar ""%currentdir%\BuildTools.jar"" --rev %currentmcver%
 cd %cud%
-java -jar Spigot-[mcvh].jar
-if exist Spigot-[mcvh].jar (goto menu) else (wget https://cdn.getbukkit.org/spigot/spigot-mcver.jar)
-java -jar Spigot-[mcvh].jar
+java -jar Spigot-%currentmcver%.jar
+if exist Spigot-%currentmcver%.jar (goto menu) else (wget https://cdn.getbukkit.org/spigot/spigot-%currentmcver%.jar)
+java -jar Spigot-%currentmcver%.jar
 del BuildTools.jar
 cls
 goto menu
+::Server console itself (The meat pt.1)
 :SMCSN
 cls
 title Server console
-java -jar Spigot_[mcverhere].jar
+java -jar Spigot_%currentmcver%.jar
 cls
-java -jar Spigot-[mcverhere].jar
+java -jar Spigot-%currentmcver%.jar
 cls
+goto menu
+
+:: Placeholder message, nothing special
+:msgn1
+cls
+echo Coming soon!
+pause
+goto menu
+
+:stage2-creation
+echo @echo off > %temp%/updst1.cmd
+echo set mcdir= >> %temp%/updst1.cmd
+echo ren update.bat main.cmd >> %temp%/updst1.cmd
+echo mklink MCSL C:\test.lnk
+echo start main.cmd >> %temp%/updst1.cmd
+goto autoupdate
+
+:stage2ac
+start %temp%/updst1.cmd
+exit
+
+::Devmenu (feel free to activate)
+execute update 1
+set /p devmo=select=
+if %devmo%==1 goto autoupdate
+
+:uto
+echo Up to date!
 goto menu
