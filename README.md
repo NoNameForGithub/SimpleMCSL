@@ -1,5 +1,5 @@
 # SimpleMCSL
-## Rewrite coming soon ;)
+## Rewrite's beta 1 has released [Click here to download](../../releases/tag/1.0.0-beta.1)
 Shitty minecraft server launcher intended for my personal usage, so if you're looking for a lot, don't stay here<br>
 Req:<br>
 wget exe, Java and Git for Windows<br> 
