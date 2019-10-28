@@ -13,15 +13,16 @@ set curl=https://github.com/KcrPL/KcrPL.github.io/raw/master/Patchers_Auto_Updat
 set fileshat=http://intelcoreocta.7m.pl/php/mcslfiles.php?dir=%tempdironl1%
 set version=1.0.0
 set dev=1
-set stage=dev
+set stage=beta
+set devn=1
 set datec=27/10/2019
-set at=
+set at=9:34 AM CEST
 set currentmcver=1.14.4
 set temp=%appdata%/.MinecraftServerLauncher
 set devmenu=0
 
 :: Variable checking time
-if %dev%==1 title MCSL-TST v%version%-%stage% [rewrite]
+if %dev%==1 title MCSL-TST v%version%-%stage% %devn% [rewrite]
 if %dev%==0 title MCSL-TST v%version% [rewrite]
 if %devmenu%==0 goto menu
 if %devmenu%==1 goto devmenu
@@ -62,11 +63,11 @@ if %s%==s goto msgn1
 :inst
 cls
 set cud=.
-wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
+call powershell -command (new-object System.Net.WebClient).DownloadFile('"https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar"', '"%temp%/BuildTools.jar"') 
 set bd="C:\Program Files (x86)\Git\bin\bash.exe"
 set bd64="C:\Program Files\Git\bin\bash.exe"
-%bd% --login -i -c "java -jar ""%currentdir%\BuildTools.jar"" --rev %currentmcver%
-%bd64% --login -i -c "java -jar ""%currentdir%\BuildTools.jar"" --rev %currentmcver%
+%bd% --login -i -c "java -jar ""%temp%\BuildTools.jar"" --rev %currentmcver%
+%bd64% --login -i -c "java -jar ""%temp%\BuildTools.jar"" --rev %currentmcver%
 cd %cud%
 java -jar Spigot-%currentmcver%.jar
 if exist Spigot-%currentmcver%.jar (goto menu) else (wget https://cdn.getbukkit.org/spigot/spigot-%currentmcver%.jar)
@@ -74,7 +75,8 @@ java -jar Spigot-%currentmcver%.jar
 del BuildTools.jar
 cls
 goto menu
-::Server console itself (The meat pt.1)
+
+::Server console itself
 :SMCSN
 cls
 title Server console
@@ -91,6 +93,7 @@ echo Coming soon!
 pause
 goto menu
 
+::If the stage 2 cmd file doesn't exist, create it
 :stage2-creation
 echo @echo off > %temp%/updst1.cmd
 echo set mcdir= >> %temp%/updst1.cmd
@@ -104,6 +107,7 @@ start %temp%/updst1.cmd
 exit
 
 ::Devmenu (feel free to activate)
+echo DEVM3NU/Menu Desarrollador
 execute update 1
 set /p devmo=select=
 if %devmo%==1 goto autoupdate
