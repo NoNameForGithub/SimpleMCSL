@@ -3,9 +3,7 @@
 ## [Download stable (kinda) builds here](../../releases/latest)
 [Untested builds here (bleeding edge)](../../releases/tag/be)
 <br>Shitty minecraft server launcher intended for my personal usage, so if you're looking for a lot, don't stay here</br>
-<br>Req:</br>
-<br>Java</br> 
-Git not needed for MP ver<br>
+<br>Req: Java</br>
 
 Check the wiki to find versions that work on older systems like XP (requirement programs)
 
