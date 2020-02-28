@@ -1,8 +1,8 @@
 # SimpleMCSL
-## Rewrite betas [Click here to download](../../releases/tag/1.0.0-beta.1.1)
-## [Download stable (kinda) builds here](../../releases/latest)
-[Untested builds here (bleeding edge)](./source.cmd)
-[Wiki](../../wiki)
+### Rewrite betas [Click here to download](../../releases/tag/1.0.0-beta.1.1)
+### [Download stable (kinda) builds here](../../releases/latest)
+### <br>[Untested builds here (bleeding edge)](./source.cmd)</br>
+### <br>[Wiki](../../wiki)</br>
 
 Check the wiki to find versions that work on older systems like XP (requirement programs)
 
