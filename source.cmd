@@ -24,7 +24,7 @@ set currentmcver=[Search for the value currentmcver in settings!]
 set tempddir=%appdata%/.MinecraftServerLauncher
 set devmenu=0
 set canunzip7810=0
-
+set switch=paper
 :: Variable checking time
 if %dev%==1 title MCSL-TST v%version%-%stage% %devn% [rewrite]
 if %dev%==0 title MCSL-TST v%version% [rewrite]
