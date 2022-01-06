@@ -1,6 +1,6 @@
 @echo off
 :: Minecraft Server Launcher - The Server Toolkit rewrite
-:: Author [nonameforgithub 2019-2020]
+:: Author [nonameforgithub 2019-2021]
 echo Starting up...
 
 :: Check for temporary files if they weren't deleted in the last session
@@ -15,8 +15,8 @@ set dev=1
 set stage=alpha
 set devn=1.2.1paper
 set datec=06/01/2021
-set at=12:12 CEST
-set currentmcver=1.16.1
+set at=16:59 CEST
+set currentmcver=1.18.1
 set tempddir=%appdata%/.MinecraftServerLauncher
 set devmenu=0
 set arguments=
